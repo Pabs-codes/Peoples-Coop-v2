@@ -19592,6 +19592,20 @@ body.ec-open:before {
   background-position: center;
 }
 
+.ec-slide-4 {
+  background-image: url("../images/main-slider-banner/4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.ec-slide-5 {
+  background-image: url("../images/main-slider-banner/5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 /*----  Main Slider Style  ----*/
 .ec-main-slider .container {
   position: absolute;
