@@ -183,6 +183,8 @@
 
      <?php include 'includes/brands.php'; ?>   <!-- instagram Section  -->
 
+     
+
      <?php include 'includes/settingsbtn.php'; ?>   <!-- settings button  -->
 
      <?php include 'includes/whatsappfloat.php'; ?>   <!-- whatsapp button  -->
