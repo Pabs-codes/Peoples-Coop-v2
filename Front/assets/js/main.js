@@ -1,5 +1,5 @@
 /**
-    Item Name: Ekka - Ecommerce HTML Template.
+    Item Name: peoples_coop - Ecommerce HTML Template.
     Author: ashishmaraviya
     Version: 3.2
     Copyright 2021-2022
@@ -444,7 +444,7 @@ function ecCheckCookie()
         }
 	});
 
-    /*----------------------------- Sidekka And SideMenu -----------------------------------*/
+    /*----------------------------- Sidpeoples_coop And SideMenu -----------------------------------*/
     $("body").on("click", ".add-to-cart", function(){
 
         $(".ec-cart-float").fadeIn();
@@ -467,7 +467,7 @@ function ecCheckCookie()
         var p_price = $(this).parents().parents().parents().children(".ec-pro-content").children(".ec-price").children(".new-price").html();
         
         var p_html = '<li>'+
-                        '<a href="product-left-sidebar.html" class="sidekka_pro_img"><img src="'+ img_url +'" alt="product"></a>'+
+                        '<a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"><img src="'+ img_url +'" alt="product"></a>'+
                         '<div class="ec-pro-content">'+
                             '<a href="product-left-sidebar.html" class="cart_pro_title">'+ p_name +'</a>'+
                         '<span class="cart-price"><span>'+ p_price +'</span> x 1</span>'+
@@ -483,11 +483,11 @@ function ecCheckCookie()
     });
 
     (function() {
-        var $ekkaToggle = $(".ec-side-toggle"),
-        $ekka = $(".ec-side-cart"),
+        var $peoples_coopToggle = $(".ec-side-toggle"),
+        $peoples_coop = $(".ec-side-cart"),
         $ecMenuToggle = $(".mobile-menu-toggle");
 
-        $ekkaToggle.on("click", function(e) {
+        $peoples_coopToggle.on("click", function(e) {
             e.preventDefault();
             var $this = $(this),
             $target = $this.attr("href");
@@ -502,14 +502,14 @@ function ecCheckCookie()
         
         $(".ec-side-cart-overlay").on("click", function(e) {
             $(".ec-side-cart-overlay").fadeOut();
-            $ekka.removeClass("ec-open");
+            $peoples_coop.removeClass("ec-open");
             $ecMenuToggle.find("a").removeClass("close");
         });
 
         $(".ec-close").on("click", function(e) {
             e.preventDefault();
             $(".ec-side-cart-overlay").fadeOut();
-            $ekka.removeClass("ec-open");
+            $peoples_coop.removeClass("ec-open");
             $ecMenuToggle.find("a").removeClass("close");
         });
 
@@ -533,13 +533,13 @@ function ecCheckCookie()
         
     })();
 
-    /*----------------------------- ekka Responsive Menu -----------------------------------*/
-    function ResponsiveMobileekkaMenu() {
-        var $ekkaNav = $(".ec-menu-content, .overlay-menu"),
-        $ekkaNavSubMenu = $ekkaNav.find(".sub-menu");
-        $ekkaNavSubMenu.parent().prepend('<span class="menu-toggle"></span>');
+    /*----------------------------- peoples_coop Responsive Menu -----------------------------------*/
+    function ResponsiveMobilepeoples_coopMenu() {
+        var $peoples_coopNav = $(".ec-menu-content, .overlay-menu"),
+        $peoples_coopNavSubMenu = $peoples_coopNav.find(".sub-menu");
+        $peoples_coopNavSubMenu.parent().prepend('<span class="menu-toggle"></span>');
 
-        $ekkaNav.on("click", "li a, .menu-toggle", function(e) {
+        $peoples_coopNav.on("click", "li a, .menu-toggle", function(e) {
             var $this = $(this);
             if ($this.attr("href") === "#" || $this.hasClass("menu-toggle")) {
                 e.preventDefault();
@@ -558,7 +558,7 @@ function ecCheckCookie()
         });
     }
 
-    ResponsiveMobileekkaMenu();
+    ResponsiveMobilepeoples_coopMenu();
 
     /*----------------------------- Main Slider ---------------------- */
     var EcMainSlider = new Swiper('.ec-slider.swiper-container', {
