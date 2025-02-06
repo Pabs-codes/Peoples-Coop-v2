@@ -326,7 +326,7 @@
           <div class="ec-sb-pro-sl">
             <div>
               <div class="ec-sb-pro-sl-item">
-                <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+                <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                   ><img src="assets/images/product-image/1.jpg" alt="product"
                 /></a>
                 <div class="ec-pro-content">
@@ -349,7 +349,7 @@
             </div>
             <div>
               <div class="ec-sb-pro-sl-item">
-                <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+                <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                   ><img src="assets/images/product-image/2.jpg" alt="product"
                 /></a>
                 <div class="ec-pro-content">
@@ -374,7 +374,7 @@
             </div>
             <div>
               <div class="ec-sb-pro-sl-item">
-                <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+                <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                   ><img src="assets/images/product-image/3.jpg" alt="product"
                 /></a>
                 <div class="ec-pro-content">
@@ -397,7 +397,7 @@
             </div>
             <div>
               <div class="ec-sb-pro-sl-item">
-                <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+                <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                   ><img src="assets/images/product-image/4.jpg" alt="product"
                 /></a>
                 <div class="ec-pro-content">
@@ -420,7 +420,7 @@
             </div>
             <div>
               <div class="ec-sb-pro-sl-item">
-                <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+                <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                   ><img src="assets/images/product-image/5.jpg" alt="product"
                 /></a>
                 <div class="ec-pro-content">
@@ -443,7 +443,7 @@
             </div>
             <div>
               <div class="ec-sb-pro-sl-item">
-                <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+                <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                   ><img src="assets/images/product-image/6.jpg" alt="product"
                 /></a>
                 <div class="ec-pro-content">
@@ -466,7 +466,7 @@
             </div>
             <div>
               <div class="ec-sb-pro-sl-item">
-                <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+                <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                   ><img src="assets/images/product-image/7.jpg" alt="product"
                 /></a>
                 <div class="ec-pro-content">
@@ -489,7 +489,7 @@
             </div>
             <div>
               <div class="ec-sb-pro-sl-item">
-                <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+                <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                   ><img src="assets/images/product-image/2.jpg" alt="product"
                 /></a>
                 <div class="ec-pro-content">
@@ -529,7 +529,7 @@
     <!-- Product 1: Kelalikarayo Book -->
     <div>
       <div class="ec-sb-pro-sl-item">
-        <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img">
+        <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img">
           <img src="assets/images/product-image/kelalikarayo.jpg" alt="Kelalikarayo" />
         </a>
         <div class="ec-pro-content">
@@ -554,7 +554,7 @@
     <!-- Product 2: May Mara Prasangaya Book -->
     <div>
       <div class="ec-sb-pro-sl-item">
-        <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img">
+        <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img">
           <img src="assets/images/product-image/may-mara-prasangaya.jpg" alt="May Mara Prasangaya" />
         </a>
         <div class="ec-pro-content">
@@ -579,7 +579,7 @@
     <!-- Product 3: Silver Tips Book -->
     <div>
       <div class="ec-sb-pro-sl-item">
-        <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img">
+        <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img">
           <img src="assets/images/product-image/silver-tips.jpg" alt="Silver Tips" />
         </a>
         <div class="ec-pro-content">
@@ -604,7 +604,7 @@
     <!-- Product 4: Thiwanka Kathawa Book -->
     <div>
       <div class="ec-sb-pro-sl-item">
-        <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img">
+        <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img">
           <img src="assets/images/product-image/thiwanka-kathawa.jpg" alt="Thiwanka Kathawa" />
         </a>
         <div class="ec-pro-content">
@@ -629,7 +629,7 @@
     <!-- Product 5: Muses Books -->
     <div>
       <div class="ec-sb-pro-sl-item">
-        <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img">
+        <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img">
           <img src="assets/images/product-image/muses-books.jpg" alt="Muses Books" />
         </a>
         <div class="ec-pro-content">
@@ -654,7 +654,7 @@
     <!-- Product 6: New Peoples Coop T-Shirt -->
     <div>
       <div class="ec-sb-pro-sl-item">
-        <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img">
+        <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img">
           <img src="assets/images/product-image/peoples-coop-tshirt.jpg" alt="Peoples Coop T-shirt" />
         </a>
         <div class="ec-pro-content">

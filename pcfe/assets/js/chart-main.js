@@ -1,5 +1,5 @@
 /**
-    Item Name: peoples_coop - Ecommerce HTML Template.
+    Item Name: peoplescoop - Ecommerce HTML Template.
     Author: ashishmaraviya
     Version: 3.2
     Copyright 2021-2022

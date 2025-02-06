@@ -927,7 +927,7 @@
           </div>
         </div>
         <!-- Ec Main Menu End -->
-        <!-- peoples_coop Mobile Menu Start -->
+        <!-- peoplescoop Mobile Menu Start -->
         <div id="ec-mobile-menu" class="ec-side-cart ec-mobile-menu">
           <div class="ec-menu-title">
             <span class="menu_title">Coop Menu</span>
@@ -1416,6 +1416,6 @@
             </div>
           </div>
         </div>
-        <!-- peoples_coop mobile Menu End -->
+        <!-- peoplescoop mobile Menu End -->
       </header>
       <!-- Header End  -->

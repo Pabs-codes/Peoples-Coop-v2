@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-	header('location:login.php');
+	// header('location:login.php');
 }
 ?>
 <!DOCTYPE html>
@@ -11,9 +11,9 @@ if (!isset($_SESSION['admin'])) {
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="peoples_coop - Admin Dashboard HTML Template.">
+	<meta name="description" content="peoplescoop - Admin Dashboard HTML Template.">
 
-	<title>peoples_coop - Admin Dashboard HTML Template.</title>
+	<title>People's COOP - Admin Dashboard HTML Template.</title>
 
 	<!-- GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,8 +25,8 @@ if (!isset($_SESSION['admin'])) {
 	<!-- PLUGINS CSS STYLE -->
 	<link href="assets/plugins/simplebar/simplebar.css" rel="stylesheet" />
 
-	<!-- peoples_coop CSS -->
-	<link id="peoples_coop-css" rel="stylesheet" href="assets/css/peoples_coop.css" />
+	<!-- peoplescoop CSS -->
+	<link id="peoplescoop-css" rel="stylesheet" href="assets/css/peoplescoop.css" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/favicon.png" rel="shortcut icon" />
@@ -43,9 +43,9 @@ if (!isset($_SESSION['admin'])) {
 			<div id="sidebar" class="sidebar ec-sidebar-footer">
 
 				<div class="ec-brand">
-					<a href="index.html" title="peoples_coop">
+					<a href="index.html" title="peoplescoop">
 						<img class="ec-brand-icon" src="assets/img/logo/ec-site-logo.png" alt="" />
-						<span class="ec-brand-name text-truncate">peoples_coop</span>
+						<span class="ec-brand-name text-truncate">peoplescoop</span>
 					</a>
 				</div>
 
@@ -1078,10 +1078,10 @@ if (!isset($_SESSION['admin'])) {
 											<div class="ec-vendor-upload-detail">
 												<!-- Form Farts Here -->
 
-												<form class="row g-3">
+												<form class="row g-3" action="pb_add_product.php" method="POST">
 													<div class="col-md-6">
-														<label for="inputEmail4" class="form-label">Product name</label>
-														<input type="text" class="form-control slug-title" id="inputEmail4">
+														<label for="product_name" class="form-label">Product name</label>
+														<input type="text" class="form-control slug-title" id="product_name">
 													</div>
 													<div class="col-md-6">
 														<label class="form-label">Select Categories</label>
@@ -1196,7 +1196,7 @@ if (!isset($_SESSION['admin'])) {
 				<div class="copyright bg-white">
 					<p>
 						Copyright &copy; <span id="ec-year"></span><a class="text-primary"
-						href="https://themeforest.net/user/ashishmaraviya" target="_blank"> peoples_coop Admin Dashboard</a>. All Rights Reserved.
+						href="https://themeforest.net/user/ashishmaraviya" target="_blank"> peoplescoop Admin Dashboard</a>. All Rights Reserved.
 					  </p>
 				</div>
 			</footer>
@@ -1215,8 +1215,8 @@ if (!isset($_SESSION['admin'])) {
 	<!-- Option Switcher -->
 	<script src="assets/plugins/options-sidebar/optionswitcher.js"></script>
 
-	<!-- peoples_coop Custom -->
-	<script src="assets/js/peoples_coop.js"></script>
+	<!-- peoplescoop Custom -->
+	<script src="assets/js/peoplescoop.js"></script>
 </body>
 
 </html>

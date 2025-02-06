@@ -1,5 +1,5 @@
 /**
-    Item Name: peoples_coop - Ecommerce HTML Template.
+    Item Name: peoplescoop - Ecommerce HTML Template.
     Author: ashishmaraviya
     Version: 3.2
     Copyright 2021-2022
@@ -444,7 +444,7 @@ function ecCheckCookie()
         }
 	});
 
-    /*----------------------------- Sidpeoples_coop And SideMenu -----------------------------------*/
+    /*----------------------------- Sidpeoplescoop And SideMenu -----------------------------------*/
     $("body").on("click", ".add-to-cart", function(){
 
         $(".ec-cart-float").fadeIn();
@@ -467,7 +467,7 @@ function ecCheckCookie()
         var p_price = $(this).parents().parents().parents().children(".ec-pro-content").children(".ec-price").children(".new-price").html();
         
         var p_html = '<li>'+
-                        '<a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"><img src="'+ img_url +'" alt="product"></a>'+
+                        '<a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"><img src="'+ img_url +'" alt="product"></a>'+
                         '<div class="ec-pro-content">'+
                             '<a href="product-left-sidebar.html" class="cart_pro_title">'+ p_name +'</a>'+
                         '<span class="cart-price"><span>'+ p_price +'</span> x 1</span>'+
@@ -483,11 +483,11 @@ function ecCheckCookie()
     });
 
     (function() {
-        var $peoples_coopToggle = $(".ec-side-toggle"),
-        $peoples_coop = $(".ec-side-cart"),
+        var $peoplescoopToggle = $(".ec-side-toggle"),
+        $peoplescoop = $(".ec-side-cart"),
         $ecMenuToggle = $(".mobile-menu-toggle");
 
-        $peoples_coopToggle.on("click", function(e) {
+        $peoplescoopToggle.on("click", function(e) {
             e.preventDefault();
             var $this = $(this),
             $target = $this.attr("href");
@@ -502,14 +502,14 @@ function ecCheckCookie()
         
         $(".ec-side-cart-overlay").on("click", function(e) {
             $(".ec-side-cart-overlay").fadeOut();
-            $peoples_coop.removeClass("ec-open");
+            $peoplescoop.removeClass("ec-open");
             $ecMenuToggle.find("a").removeClass("close");
         });
 
         $(".ec-close").on("click", function(e) {
             e.preventDefault();
             $(".ec-side-cart-overlay").fadeOut();
-            $peoples_coop.removeClass("ec-open");
+            $peoplescoop.removeClass("ec-open");
             $ecMenuToggle.find("a").removeClass("close");
         });
 
@@ -533,13 +533,13 @@ function ecCheckCookie()
         
     })();
 
-    /*----------------------------- peoples_coop Responsive Menu -----------------------------------*/
-    function ResponsiveMobilepeoples_coopMenu() {
-        var $peoples_coopNav = $(".ec-menu-content, .overlay-menu"),
-        $peoples_coopNavSubMenu = $peoples_coopNav.find(".sub-menu");
-        $peoples_coopNavSubMenu.parent().prepend('<span class="menu-toggle"></span>');
+    /*----------------------------- peoplescoop Responsive Menu -----------------------------------*/
+    function ResponsiveMobilepeoplescoopMenu() {
+        var $peoplescoopNav = $(".ec-menu-content, .overlay-menu"),
+        $peoplescoopNavSubMenu = $peoplescoopNav.find(".sub-menu");
+        $peoplescoopNavSubMenu.parent().prepend('<span class="menu-toggle"></span>');
 
-        $peoples_coopNav.on("click", "li a, .menu-toggle", function(e) {
+        $peoplescoopNav.on("click", "li a, .menu-toggle", function(e) {
             var $this = $(this);
             if ($this.attr("href") === "#" || $this.hasClass("menu-toggle")) {
                 e.preventDefault();
@@ -558,7 +558,7 @@ function ecCheckCookie()
         });
     }
 
-    ResponsiveMobilepeoples_coopMenu();
+    ResponsiveMobilepeoplescoopMenu();
 
     /*----------------------------- Main Slider ---------------------- */
     var EcMainSlider = new Swiper('.ec-slider.swiper-container', {

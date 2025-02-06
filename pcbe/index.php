@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-	header('location:login.php');
+	// header('location:login.php');
 }
 ?>
 <!DOCTYPE html>
@@ -26,8 +26,8 @@ if (!isset($_SESSION['admin'])) {
 	<link href="assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
 	<link href="assets/plugins/simplebar/simplebar.css" rel="stylesheet" />
 
-	<!-- peoples_coop CSS -->
-	<link id="peoples_coop-css" href="assets/css/peoples_coop.css" rel="stylesheet" />
+	<!-- peoplescoop CSS -->
+	<link id="peoplescoop-css" href="assets/css/peoplescoop.css" rel="stylesheet" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/favicon.png" rel="shortcut icon" />
@@ -44,7 +44,7 @@ if (!isset($_SESSION['admin'])) {
 			<div id="sidebar" class="sidebar ec-sidebar-footer">
 
 				<div class="ec-brand">
-					<a href="index.html" title="peoples_coop">
+					<a href="index.html" title="peoplescoop">
 						<img class="ec-brand-icon" src="assets/img/favicon.png" alt="" />
 						<span class="ec-brand-name text-truncate">ADMIN</span>
 					</a>
@@ -151,7 +151,7 @@ if (!isset($_SESSION['admin'])) {
 							<div class="collapse">
 								<ul class="sub-menu" id="products" data-parent="#sidebar-menu">
 									<li class="">
-										<a class="sidenav-item-link" href="product-add.html">
+										<a class="sidenav-item-link" href="product-add.php">
 											<span class="nav-text">Add Product</span>
 										</a>
 									</li>
@@ -1669,8 +1669,8 @@ if (!isset($_SESSION['admin'])) {
 	<!-- Option Switcher -->
 	<script src="assets/plugins/options-sidebar/optionswitcher.js"></script>
 
-	<!-- peoples_coop Custom -->
-	<script src="assets/js/peoples_coop.js"></script>
+	<!-- peoplescoop Custom -->
+	<script src="assets/js/peoplescoop.js"></script>
 </body>
 
 </html>

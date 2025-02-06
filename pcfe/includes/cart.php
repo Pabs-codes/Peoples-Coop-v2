@@ -8,7 +8,7 @@
           </div>
           <ul class="eccart-pro-items">
             <li>
-              <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+              <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                 ><img src="assets/images/product-image/6_1.jpg" alt="product"
               /></a>
               <div class="ec-pro-content">
@@ -28,7 +28,7 @@
               </div>
             </li>
             <li>
-              <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+              <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                 ><img src="assets/images/product-image/12_1.jpg" alt="product"
               /></a>
               <div class="ec-pro-content">
@@ -48,7 +48,7 @@
               </div>
             </li>
             <li>
-              <a href="product-left-sidebar.html" class="sidpeoples_coop_pro_img"
+              <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
                 ><img src="assets/images/product-image/3_1.jpg" alt="product"
               /></a>
               <div class="ec-pro-content">
