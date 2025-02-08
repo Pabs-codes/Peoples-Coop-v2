@@ -3,7 +3,7 @@
 include 'pb_connection.php';
 
 // Fetch data from the `item` table
-$sql = "SELECT * FROM `item`";
+$sql = "SELECT * FROM `item` where status = 'active'";
 $result = $conn->query($sql);
 
 // Check if there are any rows returned
@@ -995,7 +995,7 @@ $conn->close();
                                                                 </button>
 
                                                                 <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="./product-item-view.php?id=<?php echo $item['item_id'];?>">Edit/Delete</a>
+                                                                    <a class="dropdown-item" href="./itemView.php?id=<?php echo $item['item_id'];?>">Edit/Delete</a>
 																	
                                                                     <!-- <a class="dropdown-item" href="#">Delete</a> -->
                                                                 </div>

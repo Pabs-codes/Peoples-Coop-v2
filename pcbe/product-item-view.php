@@ -1,6 +1,6 @@
 <?php
-include './pb_connection.php';
-
+// Include the database connection file
+include 'pb_connection.php';
 
 // Fetch the product details based on the item_id from the URL
 if (isset($_GET['id'])) {
@@ -19,19 +19,19 @@ if (isset($_GET['id'])) {
     }
 } else {
     // Redirect if no item ID is provided
-    header('location:product-list.php');
+    // header('location:product-list.php');
     exit();
 }
 
 // Handle Delete Action
 if (isset($_POST['delete'])) {
-    $delete_sql = "DELETE FROM `item` WHERE `item_id` = ?";
+    $delete_sql = "update `item` set status='suspended' WHERE `item_id` = ?";
     $delete_stmt = $conn->prepare($delete_sql);
     $delete_stmt->bind_param("i", $item_id);
 
     if ($delete_stmt->execute()) {
         // Redirect to product list after deletion
-        header('location:product-list.php');
+        // header('location:product-list.php');
         exit();
     } else {
         echo "Error deleting product: " . $conn->error;
@@ -110,7 +110,7 @@ if (isset($_POST['update'])) {
 
     if ($update_stmt->execute()) {
         // Redirect to the same page after successful update
-        header("Location: product-item-view.php?id=$item_id");
+        // header("Location: product-item-view.php?id=$item_id");
         exit();
     } else {
         echo "Error updating product: " . $conn->error;
@@ -119,23 +119,6 @@ if (isset($_POST['update'])) {
 ?>
 
 
-
-
-    <!-- WRAPPER -->
-    <div class="wrapper">
-
-        <!-- LEFT MAIN SIDEBAR -->
-        <div class="ec-left-sidebar ec-bg-sidebar">
-            <!-- Sidebar content here -->
-        </div>
-
-        <!-- PAGE WRAPPER -->
-        <div class="ec-page-wrapper">
-
-            <!-- Header -->
-            <header class="ec-main-header" id="header">
-                <!-- Header content here -->
-            </header>
 
             <!-- CONTENT WRAPPER -->
             <div class="ec-content-wrapper">
@@ -311,30 +294,4 @@ if (isset($_POST['update'])) {
                 </div> <!-- End Content -->
             </div> <!-- End Content Wrapper -->
 
-            <!-- Footer -->
-            <footer class="footer mt-auto">
-                <div class="copyright bg-white">
-                    <p>
-                        Copyright &copy; <span id="ec-year"></span><a class="text-primary" href="https://themeforest.net/user/ashishmaraviya" target="_blank"> peoplescoop Admin Dashboard</a>. All Rights Reserved.
-                    </p>
-                </div>
-            </footer>
-
-        </div> <!-- End Page Wrapper -->
-    </div> <!-- End Wrapper -->
-
-    <!-- Common Javascript -->
-    <script src="assets/plugins/jquery/jquery-3.5.1.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/plugins/simplebar/simplebar.min.js"></script>
-    <script src="assets/plugins/jquery-zoom/jquery.zoom.min.js"></script>
-    <script src="assets/plugins/slick/slick.min.js"></script>
-
-    <!-- Option Switcher -->
-    <script src="assets/plugins/options-sidebar/optionswitcher.js"></script>
-
-    <!-- peoplescoop Custom -->
-    <script src="assets/js/peoplescoop.js"></script>
-
-</body>
-<?php include './footerBar.php'; ?>
+            
