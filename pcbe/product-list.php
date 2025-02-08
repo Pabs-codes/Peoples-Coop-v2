@@ -979,7 +979,7 @@ $conn->close();
                                             <tbody>
                                                 <?php foreach ($items as $item) : ?>
                                                     <tr>
-                                                        <td><img class="tbl-thumb" src="uploads/<?= $item['item_code'] ?>/<?= $item['main_image'] ?>" alt="Product Image" /></td>
+                                                        <td><img class="tbl-thumb" src="uploads/<?= $item['item_code'] ?>/main_image.jpg" alt="Product Image" /></td>
                                                         <td><?= $item['item_name'] ?></td>
                                                         <td>$<?= $item['selling_price'] ?></td>
                                                         <td><?= $item['offer_id'] ?>% OFF</td>
