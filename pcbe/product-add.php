@@ -18,7 +18,9 @@ if (!isset($_SESSION['admin'])) {
 	<!-- GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap"
+		rel="stylesheet">
 
 	<link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" />
 
@@ -150,7 +152,7 @@ if (!isset($_SESSION['admin'])) {
 							<div class="collapse show">
 								<ul class="sub-menu" id="products" data-parent="#sidebar-menu">
 									<li class="active">
-										<a class="sidenav-item-link" href="product-add.html">
+										<a class="sidenav-item-link" href="product-add.php">
 											<span class="nav-text">Add Product</span>
 										</a>
 									</li>
@@ -932,7 +934,8 @@ if (!isset($_SESSION['admin'])) {
 						<div>
 							<h1>Add Product</h1>
 							<p class="breadcrumbs"><span><a href="index.html">Home</a></span>
-								<span><i class="mdi mdi-chevron-right"></i></span>Product</p>
+								<span><i class="mdi mdi-chevron-right"></i></span>Product
+							</p>
 						</div>
 						<div>
 							<a href="product-list.html" class="btn btn-primary"> View All
@@ -1078,126 +1081,231 @@ if (!isset($_SESSION['admin'])) {
 											<div class="ec-vendor-upload-detail">
 												<!-- Form Farts Here -->
 
-												<form class="row g-3" action="pb_add_product.php" method="POST" enctype="multipart/form-data">
-    <!-- Product Name -->
-    <div class="col-md-6">
-        <label for="product_name" class="form-label">Product Name</label>
-        <input type="text" class="form-control slug-title" id="product_name" name="product_name" required>
-    </div>
+												<!-- Add Product Form -->
+												<form class="row g-3" action="pb_add_product.php" method="POST"
+													enctype="multipart/form-data">
+													<!-- Item Code -->
+													<div class="col-md-6">
+														<label for="item_code" class="form-label">Item Code</label>
+														<input type="text" class="form-control" id="item_code"
+															name="item_code" required>
+													</div>
 
-    <!-- Rating -->
-    <div class="col-md-6">
-        <label for="rating" class="form-label">Rating</label>
-        <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" required>
-    </div>
+													<!-- Product Name -->
+													<div class="col-md-6">
+														<label for="product_name" class="form-label">Product
+															Name</label>
+														<input type="text" class="form-control slug-title"
+															id="product_name" name="product_name" required>
+													</div>
 
-    <!-- Description -->
-    <div class="col-md-12">
-        <label for="description" class="form-label">Description</label>
-        <textarea class="form-control" id="description" name="description" rows="2" required></textarea>
-    </div>
+													<!-- Rating -->
+													<div class="col-md-6">
+														<label for="rating" class="form-label">Rating</label>
+														<input type="number" class="form-control" id="rating"
+															name="rating" min="1" max="5" required>
+													</div>
 
-    <!-- MRP -->
-    <div class="col-md-6">
-        <label for="mrp" class="form-label">MRP</label>
-        <input type="number" class="form-control" id="mrp" name="mrp" step="0.01" required>
-    </div>
+													<!-- Description -->
+													<div class="col-md-12">
+														<label for="description" class="form-label">Description</label>
+														<textarea class="form-control" id="description"
+															name="description" rows="2" required></textarea>
+													</div>
 
-    <!-- Selling Price -->
-    <div class="col-md-6">
-        <label for="saling_price" class="form-label">Selling Price</label>
-        <input type="number" class="form-control" id="saling_price" name="saling_price" step="0.01" required>
-    </div>
+													<!-- MRP -->
+													<div class="col-md-6">
+														<label for="mrp" class="form-label">MRP</label>
+														<input type="number" class="form-control" id="mrp" name="mrp"
+															step="0.01" required>
+													</div>
 
-    <!-- Size -->
-    <div class="col-md-6">
-        <label for="size" class="form-label">Size</label>
-        <input type="text" class="form-control" id="size" name="size" required>
-    </div>
+													<!-- Selling Price -->
+													<div class="col-md-6">
+														<label for="saling_price" class="form-label">Selling
+															Price</label>
+														<input type="number" class="form-control" id="saling_price"
+															name="saling_price" step="0.01" required>
+													</div>
+													<!-- DIV for Other Category -->
+													<div id="other_category" class="col-md-12">
 
-    <!-- Quantity -->
-    <div class="col-md-6">
-        <label for="qty" class="form-label">Quantity</label>
-        <input type="number" class="form-control" id="qty" name="qty" required>
-    </div>
 
-    <!-- Color -->
-    <div class="col-md-6">
-        <label for="color" class="form-label">Color</label>
-        <input type="text" class="form-control" id="color" name="color" required>
-    </div>
+														<!-- Size -->
+														<div class="col-md-6">
+															<label for="size" class="form-label">Size</label>
+															<input type="text" class="form-control" id="size"
+																name="size" required>
+														</div>
 
-    <!-- Brand -->
-    <div class="col-md-6">
-        <label for="brand" class="form-label">Brand</label>
-        <input type="text" class="form-control" id="brand" name="brand" required>
-    </div>
+														<!-- Quantity -->
+														<div class="col-md-6">
+															<label for="qty" class="form-label">Quantity</label>
+															<input type="number" class="form-control" id="qty"
+																name="qty" required>
+														</div>
 
-    <!-- Category -->
-    <div class="col-md-6">
-        <label for="category" class="form-label">Category</label>
-        <input type="text" class="form-control" id="category" name="category" required>
-    </div>
+														<!-- Color -->
+														<div class="col-md-6">
+															<label for="color" class="form-label">Color</label>
+															<input type="text" class="form-control" id="color"
+																name="color" required>
+														</div>
 
-    <!-- Subcategory -->
-    <div class="col-md-6">
-        <label for="subcategory" class="form-label">Subcategory</label>
-        <input type="text" class="form-control" id="subcategory" name="subcategory" required>
-    </div>
+														<!-- Brand -->
+														<div class="col-md-6">
+															<label for="brand" class="form-label">Brand</label>
+															<input type="text" class="form-control" id="brand"
+																name="brand" required>
+														</div>
 
-    <!-- Make -->
-    <div class="col-md-6">
-        <label for="make" class="form-label">Make</label>
-        <input type="text" class="form-control" id="make" name="make" required>
-    </div>
+														<!-- Category -->
+														<div class="col-md-6">
+															<label for="category" class="form-label">Category</label>
+															<input type="text" class="form-control" id="category"
+																name="category" required>
+														</div>
 
-    <!-- Model -->
-    <div class="col-md-6">
-        <label for="model" class="form-label">Model</label>
-        <input type="text" class="form-control" id="model" name="model" required>
-    </div>
+														<!-- Subcategory -->
+														<div class="col-md-6">
+															<label for="subcategory"
+																class="form-label">Subcategory</label>
+															<input type="text" class="form-control" id="subcategory"
+																name="subcategory" required>
+														</div>
 
-    <!-- Keywords -->
-    <div class="col-md-12">
-        <label for="keywords" class="form-label">Keywords</label>
-        <input type="text" class="form-control" id="keywords" name="keywords" required>
-    </div>
+														<!-- Make -->
+														<div class="col-md-6">
+															<label for="make" class="form-label">Make</label>
+															<input type="text" class="form-control" id="make"
+																name="make" required>
+														</div>
 
-    <!-- Meta Description -->
-    <div class="col-md-12">
-        <label for="meta_description" class="form-label">Meta Description</label>
-        <textarea class="form-control" id="meta_description" name="meta_description" rows="2" required></textarea>
-    </div>
+														<!-- Model -->
+														<div class="col-md-6">
+															<label for="model" class="form-label">Model</label>
+															<input type="text" class="form-control" id="model"
+																name="model" required>
+														</div>
+													</div>
 
-    <!-- Meta Title -->
-    <div class="col-md-12">
-        <label for="meta_title" class="form-label">Meta Title</label>
-        <input type="text" class="form-control" id="meta_title" name="meta_title" required>
-    </div>
+													<!-- Div for Books Category -->
+													<div id="books_category" class="col-md-12" >
+														
+														<!-- Author -->
+														<div class="col-md-6">
+															<label for="author" class="form-label">Author</label>
+															<input type="text" class="form-control" id="author"
+																name="author" required>
+														</div>
 
-    <!-- Meta Keywords -->
-    <div class="col-md-12">
-        <label for="meta_keywords" class="form-label">Meta Keywords</label>
-        <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" required>
-    </div>
+														<!-- Publisher -->
+														<div class="col-md-6">
+															<label for="publisher" class="form-label">Publisher</label>
+															<input type="text" class="form-control" id="publisher"
+																name="publisher" required>
+														</div>
 
-    <!-- Offer -->
-    <div class="col-md-12">
-        <label for="offer" class="form-label">Offer</label>
-        <input type="text" class="form-control" id="offer" name="offer" required>
-    </div>
+														<!-- ISBN -->
+														<div class="col-md-6">
+															<label for="isbn" class="form-label">ISBN</label>
+															<input type="text" class="form-control" id="isbn"
+																name="isbn" required>
+														</div>
 
-    <!-- File Upload -->
-    <div class="col-md-12">
-        <label for="file" class="form-label">Upload Product Image</label>
-        <input type="file" class="form-control" id="file" name="file" accept=".jpg, .jpeg, .png" required>
-    </div>
+														<!-- Edition -->
+														<div class="col-md-6">
+															<label for="edition" class="form-label">Edition</label>
+															<input type="text" class="form-control" id="edition"
+																name="edition" required>
+														</div>
 
-    <!-- Submit Button -->
-    <div class="col-md-12">
-        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-    </div>
-</form>
+														<!-- Pages -->
+														<div class="col-md-6">
+															<label for="pages" class="form-label">Pages</label>
+															<input type="number" class="form-control" id="pages"
+																name="pages" required>
+														</div>
+
+														<!-- Binding -->
+														<div class="col-md-6">
+															<label for="binding" class="form-label">Binding</label>
+															<input type="text" class="form-control" id="binding"
+																name="binding" required>
+														</div>
+
+														<!-- Language -->
+														<div class="col-md-6">
+															<label for="language" class="form-label">Language</label>
+															<input type="text" class="form-control" id="language"
+																name="language" required>
+														</div>
+
+														<!-- Genre -->
+														<div class="col-md-6">
+															<label for="genre" class="form-label">Genre</label>
+															<input type="text" class="form-control" id="genre"
+																name="genre" required>
+														</div>
+
+														<!-- Weight -->
+														<div class="col-md-6">
+															<label for="weight" class="form-label">
+													</div>
+
+													<!-- Keywords -->
+													<div class="col-md-12">
+														<label for="keywords" class="form-label">Keywords</label>
+														<input type="text" class="form-control" id="keywords"
+															name="keywords" required>
+													</div>
+
+
+													<!-- Meta Description -->
+													<div class="col-md-12">
+														<label for="meta_description" class="form-label">Meta
+															Description</label>
+														<textarea class="form-control" id="meta_description"
+															name="meta_description" rows="2" required></textarea>
+													</div>
+
+													<!-- Meta Title -->
+													<div class="col-md-12">
+														<label for="meta_title" class="form-label">Meta Title</label>
+														<input type="text" class="form-control" id="meta_title"
+															name="meta_title" required>
+													</div>
+
+													<!-- Meta Keywords -->
+													<div class="col-md-12">
+														<label for="meta_keywords" class="form-label">Meta
+															Keywords</label>
+														<input type="text" class="form-control" id="meta_keywords"
+															name="meta_keywords" required>
+													</div>
+
+													<!-- Offer -->
+													<div class="col-md-12">
+														<label for="offer" class="form-label">Offer</label>
+														<input type="text" class="form-control" id="offer" name="offer"
+															required>
+													</div>
+
+													<!-- File Upload -->
+													<div class="col-md-12">
+														<label for="file" class="form-label">Upload Product
+															Image</label>
+														<input type="file" class="form-control" id="file" name="file"
+															accept=".jpg, .jpeg, .png" required>
+													</div>
+
+													<!-- Submit Button -->
+													<div class="col-md-12">
+														<button type="submit" name="submit"
+															class="btn btn-primary">Submit</button>
+													</div>
+
+												</form>
 
 											</div>
 										</div>
@@ -1214,8 +1322,9 @@ if (!isset($_SESSION['admin'])) {
 				<div class="copyright bg-white">
 					<p>
 						Copyright &copy; <span id="ec-year"></span><a class="text-primary"
-						href="https://themeforest.net/user/ashishmaraviya" target="_blank"> peoplescoop Admin Dashboard</a>. All Rights Reserved.
-					  </p>
+							href="https://themeforest.net/user/ashishmaraviya" target="_blank"> peoplescoop Admin
+							Dashboard</a>. All Rights Reserved.
+					</p>
 				</div>
 			</footer>
 
