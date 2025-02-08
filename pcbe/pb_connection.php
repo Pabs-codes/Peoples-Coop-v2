@@ -1,6 +1,6 @@
 <?php
 
-$servername = "morgana";
+$servername = "104.152.222.128";
 $username = "suhadamaaru_coop_online_business";
 $password = "Pulasthi@123";
 $dbname = "suhadamaaru_coop_online_business";
