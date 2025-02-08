@@ -157,7 +157,7 @@ if (!isset($_SESSION['admin'])) {
 										</a>
 									</li>
 									<li class="">
-										<a class="sidenav-item-link" href="product-list.html">
+										<a class="sidenav-item-link" href="product-list.php">
 											<span class="nav-text">List Product</span>
 										</a>
 									</li>
@@ -938,7 +938,7 @@ if (!isset($_SESSION['admin'])) {
 							</p>
 						</div>
 						<div>
-							<a href="product-list.html" class="btn btn-primary"> View All
+							<a href="product-list.php" class="btn btn-primary"> View All
 							</a>
 						</div>
 					</div>
