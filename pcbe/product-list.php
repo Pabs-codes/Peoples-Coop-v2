@@ -995,8 +995,9 @@ $conn->close();
                                                                 </button>
 
                                                                 <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                    <a class="dropdown-item" href="./product-item-view.php?id=<?php echo $item['item_id'];?>">Edit/Delete</a>
+																	
+                                                                    <!-- <a class="dropdown-item" href="#">Delete</a> -->
                                                                 </div>
                                                             </div>
                                                         </td>
