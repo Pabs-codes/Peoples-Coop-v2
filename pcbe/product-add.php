@@ -1078,109 +1078,127 @@ if (!isset($_SESSION['admin'])) {
 											<div class="ec-vendor-upload-detail">
 												<!-- Form Farts Here -->
 
-												<form class="row g-3" action="pb_add_product.php" method="POST">
-													<div class="col-md-6">
-														<label for="product_name" class="form-label">Product name</label>
-														<input type="text" class="form-control slug-title" id="product_name">
-													</div>
-													<div class="col-md-6">
-														<label class="form-label">Select Categories</label>
-														<select name="categories" id="Categories" class="form-select">
+												<form class="row g-3" action="pb_add_product.php" method="POST" enctype="multipart/form-data">
+    <!-- Product Name -->
+    <div class="col-md-6">
+        <label for="product_name" class="form-label">Product Name</label>
+        <input type="text" class="form-control slug-title" id="product_name" name="product_name" required>
+    </div>
 
-															<?php 
-																
-																//....................retreive categories................... 
-																
-															?>
+    <!-- Rating -->
+    <div class="col-md-6">
+        <label for="rating" class="form-label">Rating</label>
+        <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" required>
+    </div>
 
-															<optgroup label="Fashion">
-																<option value="t-shirt">T-shirt</option>
-																<option value="dress">Dress</option>
-															</optgroup>
-															<optgroup label="Furniture">
-																<option value="table">Table</option>
-																<option value="sofa">Sofa</option>
-															</optgroup>
-															<optgroup label="Electronic">
-																<option value="phone">I Phone</option>
-																<option value="laptop">Laptop</option>
-															</optgroup>
-														</select>
-													</div>
-													<div class="col-md-12">
-														<label for="slug" class="col-12 col-form-label">Slug</label> 
-														<div class="col-12">
-															<input id="slug" name="slug" class="form-control here set-slug" type="text">
-														</div>
-													</div>
-													<div class="col-md-12">
-														<label class="form-label">Sort Description</label>
-														<textarea class="form-control" rows="2"></textarea>
-													</div>
-													<div class="col-md-4 mb-25">
-														<label class="form-label">Colors</label>
-														<input type="color" class="form-control form-control-color"
-															id="exampleColorInput1" value="#ff6191"
-															title="Choose your color">
-														<input type="color" class="form-control form-control-color"
-															id="exampleColorInput2" value="#33317d"
-															title="Choose your color">
-														<input type="color" class="form-control form-control-color"
-															id="exampleColorInput3" value="#56d4b7"
-															title="Choose your color">
-														<input type="color" class="form-control form-control-color"
-															id="exampleColorInput4" value="#009688"
-															title="Choose your color">
-													</div>
-													<div class="col-md-8 mb-25">
-														<label class="form-label">Size</label>
-														<div class="form-checkbox-box">
-															<div class="form-check form-check-inline">
-																<input type="checkbox" name="size1" value="size">
-																<label>S</label>
-															</div>
-															<div class="form-check form-check-inline">
-																<input type="checkbox" name="size1" value="size">
-																<label>M</label>
-															</div>
-															<div class="form-check form-check-inline">
-																<input type="checkbox" name="size1" value="size">
-																<label>L</label>
-															</div>
-															<div class="form-check form-check-inline">
-																<input type="checkbox" name="size1" value="size">
-																<label>XL</label>
-															</div>
-															<div class="form-check form-check-inline">
-																<input type="checkbox" name="size1" value="size">
-																<label>XXL</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<label class="form-label">Price <span>( In USD
-																)</span></label>
-														<input type="number" class="form-control" id="price1">
-													</div>
-													<div class="col-md-6">
-														<label class="form-label">Quantity</label>
-														<input type="number" class="form-control" id="quantity1">
-													</div>
-													<div class="col-md-12">
-														<label class="form-label">Ful Detail</label>
-														<textarea class="form-control" rows="4"></textarea>
-													</div>
-													<div class="col-md-12">
-														<label class="form-label">Product Tags <span>( Type and
-																make comma to separate tags )</span></label>
-														<input type="text" class="form-control" id="group_tag"
-															name="group_tag" value="" placeholder=""
-															data-role="tagsinput" />
-													</div>
-													<div class="col-md-12">
-														<button type="submit" class="btn btn-primary">Submit</button>
-													</div>
-												</form>
+    <!-- Description -->
+    <div class="col-md-12">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="2" required></textarea>
+    </div>
+
+    <!-- MRP -->
+    <div class="col-md-6">
+        <label for="mrp" class="form-label">MRP</label>
+        <input type="number" class="form-control" id="mrp" name="mrp" step="0.01" required>
+    </div>
+
+    <!-- Selling Price -->
+    <div class="col-md-6">
+        <label for="saling_price" class="form-label">Selling Price</label>
+        <input type="number" class="form-control" id="saling_price" name="saling_price" step="0.01" required>
+    </div>
+
+    <!-- Size -->
+    <div class="col-md-6">
+        <label for="size" class="form-label">Size</label>
+        <input type="text" class="form-control" id="size" name="size" required>
+    </div>
+
+    <!-- Quantity -->
+    <div class="col-md-6">
+        <label for="qty" class="form-label">Quantity</label>
+        <input type="number" class="form-control" id="qty" name="qty" required>
+    </div>
+
+    <!-- Color -->
+    <div class="col-md-6">
+        <label for="color" class="form-label">Color</label>
+        <input type="text" class="form-control" id="color" name="color" required>
+    </div>
+
+    <!-- Brand -->
+    <div class="col-md-6">
+        <label for="brand" class="form-label">Brand</label>
+        <input type="text" class="form-control" id="brand" name="brand" required>
+    </div>
+
+    <!-- Category -->
+    <div class="col-md-6">
+        <label for="category" class="form-label">Category</label>
+        <input type="text" class="form-control" id="category" name="category" required>
+    </div>
+
+    <!-- Subcategory -->
+    <div class="col-md-6">
+        <label for="subcategory" class="form-label">Subcategory</label>
+        <input type="text" class="form-control" id="subcategory" name="subcategory" required>
+    </div>
+
+    <!-- Make -->
+    <div class="col-md-6">
+        <label for="make" class="form-label">Make</label>
+        <input type="text" class="form-control" id="make" name="make" required>
+    </div>
+
+    <!-- Model -->
+    <div class="col-md-6">
+        <label for="model" class="form-label">Model</label>
+        <input type="text" class="form-control" id="model" name="model" required>
+    </div>
+
+    <!-- Keywords -->
+    <div class="col-md-12">
+        <label for="keywords" class="form-label">Keywords</label>
+        <input type="text" class="form-control" id="keywords" name="keywords" required>
+    </div>
+
+    <!-- Meta Description -->
+    <div class="col-md-12">
+        <label for="meta_description" class="form-label">Meta Description</label>
+        <textarea class="form-control" id="meta_description" name="meta_description" rows="2" required></textarea>
+    </div>
+
+    <!-- Meta Title -->
+    <div class="col-md-12">
+        <label for="meta_title" class="form-label">Meta Title</label>
+        <input type="text" class="form-control" id="meta_title" name="meta_title" required>
+    </div>
+
+    <!-- Meta Keywords -->
+    <div class="col-md-12">
+        <label for="meta_keywords" class="form-label">Meta Keywords</label>
+        <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" required>
+    </div>
+
+    <!-- Offer -->
+    <div class="col-md-12">
+        <label for="offer" class="form-label">Offer</label>
+        <input type="text" class="form-control" id="offer" name="offer" required>
+    </div>
+
+    <!-- File Upload -->
+    <div class="col-md-12">
+        <label for="file" class="form-label">Upload Product Image</label>
+        <input type="file" class="form-control" id="file" name="file" accept=".jpg, .jpeg, .png" required>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="col-md-12">
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
 											</div>
 										</div>
 									</div>
