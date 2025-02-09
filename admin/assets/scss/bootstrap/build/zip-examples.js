@@ -69,7 +69,7 @@ imgFiles.forEach(file => {
   sh.cp('-f', `${docsDir}/assets/brand/${file}`, `${distFolder}/assets/brand/`)
 })
 
-sh.rm(`${distFolder}/index.html`)
+sh.rm(`${distFolder}/index.php`)
 
 // get all examples' HTML files
 sh.find(`${distFolder}/**/*.html`).forEach(file => {

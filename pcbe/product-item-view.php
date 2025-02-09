@@ -126,7 +126,7 @@ if (isset($_POST['update'])) {
                     <div class="breadcrumb-wrapper d-flex align-items-center justify-content-between">
                         <div>
                             <h1>View Product</h1>
-                            <p class="breadcrumbs"><span><a href="index.html">Home</a></span>
+                            <p class="breadcrumbs"><span><a href="index.php">Home</a></span>
                                 <span><i class="mdi mdi-chevron-right"></i></span>Product
                             </p>
                         </div>

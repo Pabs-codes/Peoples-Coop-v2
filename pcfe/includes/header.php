@@ -179,7 +179,7 @@
                 <!-- Ec Header Logo Start -->
                 <div class="align-self-center">
                   <div class="header-logo">
-                    <a href="index.html"
+                    <a href="index.php"
                       ><img
                         src="assets/images/logo/logo.png"
                         alt="Site Logo" /><img
@@ -283,7 +283,7 @@
               <!-- Ec Header Logo Start -->
               <div class="col">
                 <div class="header-logo">
-                  <a href="index.html"
+                  <a href="index.php"
                     ><img src="assets/images/logo/logo.png" alt="Site Logo" /><img
                       class="dark-logo"
                       src="assets/images/logo/dark-logo.png"
@@ -334,7 +334,7 @@
                     />
                   </a>
                   <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li class="dropdown position-static">
                       <a href="javascript:void(0)">Shop</a>
                       <!-- <ul class="mega-menu d-block">
@@ -936,7 +936,7 @@
           <div class="ec-menu-inner">
             <div class="ec-menu-content">
               <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li>
                   <a href="javascript:void(0)">Shop</a>
                   <ul class="sub-menu">

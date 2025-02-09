@@ -44,7 +44,7 @@ if (!isset($_SESSION['admin'])) {
 			<div id="sidebar" class="sidebar ec-sidebar-footer">
 
 				<div class="ec-brand">
-					<a href="index.html" title="peoplescoop">
+					<a href="index.php" title="peoplescoop">
 						<img class="ec-brand-icon" src="assets/img/favicon.png" alt="" />
 						<span class="ec-brand-name text-truncate">ADMIN</span>
 					</a>
@@ -56,7 +56,7 @@ if (!isset($_SESSION['admin'])) {
 					<ul class="nav sidebar-inner" id="sidebar-menu">
 						<!-- Dashboard -->
 						<li class="active">
-							<a class="sidenav-item-link" href="index.html">
+							<a class="sidenav-item-link" href="index.php">
 								<i class="mdi mdi-view-dashboard-outline"></i>
 								<span class="nav-text">Dashboard</span>
 							</a>
@@ -347,7 +347,7 @@ if (!isset($_SESSION['admin'])) {
 										<a href="javascript:0"> <i class="mdi mdi-settings-outline"></i> Setting </a>
 									</li>
 									<li class="dropdown-footer">
-										<a href="index.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+										<a href="index.php"> <i class="mdi mdi-logout"></i> Log Out </a>
 									</li>
 								</ul>
 							</li>

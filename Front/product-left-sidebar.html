@@ -147,7 +147,7 @@
                         <!-- Ec Header Logo Start -->
                         <div class="align-self-center">
                             <div class="header-logo">
-                                <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /><img
+                                <a href="index.php"><img src="assets/images/logo/logo.png" alt="Site Logo" /><img
                                         class="dark-logo" src="assets/images/logo/dark-logo.png" alt="Site Logo"
                                         style="display: none;" /></a>
                             </div>
@@ -210,7 +210,7 @@
                     <!-- Ec Header Logo Start -->
                     <div class="col">
                         <div class="header-logo">
-                            <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /><img
+                            <a href="index.php"><img src="assets/images/logo/logo.png" alt="Site Logo" /><img
                                     class="dark-logo" src="assets/images/logo/dark-logo.png" alt="Site Logo"
                                     style="display: none;" /></a>
                         </div>
@@ -238,7 +238,7 @@
                     <div class="col-md-12 align-self-center">
                         <div class="ec-main-menu">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index.php">Home</a></li>
                                 <li class="dropdown position-static"><a href="javascript:void(0)">Categories</a>
                                     <ul class="mega-menu d-block">
                                         <li class="d-flex">
@@ -491,7 +491,7 @@
             <div class="ec-menu-inner">
                 <div class="ec-menu-content">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="javascript:void(0)">Categories</a>
                             <ul class="sub-menu">
                                 <li>
@@ -809,7 +809,7 @@
                         <div class="col-md-6 col-sm-12">
                             <!-- ec-breadcrumb-list start -->
                             <ul class="ec-breadcrumb-list">
-                                <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="ec-breadcrumb-item"><a href="index.php">Home</a></li>
                                 <li class="ec-breadcrumb-item active">Products</li>
                             </ul>
                             <!-- ec-breadcrumb-list end -->
@@ -2070,7 +2070,7 @@
                             class="ec-cart-noti ec-header-count cart-count-lable">3</span></a>
                 </div>
                 <div class="ec-nav-panel-icons">
-                    <a href="index.html" class="ec-header-btn"><img src="assets/images/icons/home.svg"
+                    <a href="index.php" class="ec-header-btn"><img src="assets/images/icons/home.svg"
                             class="svg_img header_svg" alt="icon" /></a>
                 </div>
                 <div class="ec-nav-panel-icons">
