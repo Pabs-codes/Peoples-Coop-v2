@@ -1,5 +1,11 @@
 <?php
 session_start();
+include 'pb_connection.php';
+
+
+$sql = "SELECT * FROM item where status = 'active' ORDER BY category asc";
+$result = mysqli_query($conn, $sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -158,27 +164,39 @@ session_start();
   <div class="row">
     <div class="col-md-12 text-center">
       <ul class="ec-pro-tab-nav nav justify-content-center">
+        
         <li class="nav-item">
           <a class="nav-link active" data-bs-toggle="tab" href="#tab-pro-for-all"> All</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-men">T Shirts</a>
-        </li>
+        <?php
+        $cat_holder='';
+        
+        foreach($result as $row){
+          $item_name = $row['item_name'];
+          $item_code = $row['item_code'];
+          $item_description = $row['item_description'];
+          $mrp = $row['mrp'];
+          $selling_price = $row['selling_price'];
+          $category = $row['category'];
+          $subcategory = $row['subcategory'];
+          $brand = $row['brand'];
+          $rating = $row['rating'];
+          if($cat_holder == $row['category']){
+            
+          }else{
+            $cat_holder = $row['category'];
+            echo "<li class='nav-item'>
+          <a class='nav-link' data-bs-toggle='tab' href='#".$category."'>".$category."</a>
+        </li>";
+          }
+          // print_r($cat_array);
+          
+        }
+        ?>
 
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-men"> Perfumes </a>
-        </li>
+        
 
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-women">Books</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-child">Electronics</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-child">Shoes</a>
-        </li>
+        
       </ul>
     </div>
   </div>
@@ -195,22 +213,30 @@ session_start();
           <div class="tab-pane fade show active" id="tab-pro-for-all">
             <div class="row">
   <?php
-  include 'pb_connection.php';
-
-
-  $sql = "SELECT * FROM item where status = 'active'";
-  $result = mysqli_query($conn, $sql);
-  while($row = mysqli_fetch_assoc($result)){
+ 
+  
+ $category='';
+  foreach($result as $row){
     $item_name = $row['item_name'];
     $item_code = $row['item_code'];
     $item_description = $row['item_description'];
     $mrp = $row['mrp'];
     $selling_price = $row['selling_price'];
-    $category = $row['category'];
     $subcategory = $row['subcategory'];
     $brand = $row['brand'];
     $rating = $row['rating'];
-    include 'product-details.php';
+    // check category
+    if($category == $row['category']){
+      include 'product-details.php';
+    }else{
+      $category = $row['category'];
+      
+      echo "<div class='tab-pane fade show active' id='".$category."' name='".$category."'>";
+      echo "<b><u>$category</b></u>";
+      include 'product-details.php';
+      echo "</div>";
+    }
+    // include 'product-details.php';
   }
   
   // print_r($row);
