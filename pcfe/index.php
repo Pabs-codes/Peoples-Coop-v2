@@ -156,30 +156,17 @@ session_start();
   </div>
   <!-- Main Slider End -->
 
-  <?php
-  include 'pb_connection.php';
 
 
-  $sql = "SELECT * FROM item where status = 'active'";
-  $result = mysqli_query($conn, $sql);
-  while($row = mysqli_fetch_assoc($result)){
-    $item_name = $row['item_name'];
-    $item_code = $row['item_code'];
-    $item_description = $row['item_description'];
-    $mrp = $row['mrp'];
-    $selling_price = $row['selling_price'];
-    $category = $row['category'];
-    $subcategory = $row['subcategory'];
-    $brand = $row['brand'];
-    $rating = $row['rating'];
-    include 'product-details.php';
-  }
-  
-  // print_r($row);
-  $conn->close();
 
   
-  ?> <!-- ec Product tab Area -->
+
+  
+
+  
+  
+  
+  <?php include 'producttabarea.php'; ?> <!-- ec Product tab Area -->
 
   <?php include 'includes/bannersection.php'; ?> <!-- ec Banner Section  -->
 
@@ -196,6 +183,40 @@ session_start();
   <?php include 'includes/whatsappfloat.php'; ?> <!-- whatsapp button  -->
 
   <?php include 'includes/footer.php'; ?> <!-- footer  -->
+
+
+  <?php
+  include 'pb_connection.php';
+
+  $sql = "SELECT * FROM item where status = 'active'";
+  $result = mysqli_query($conn, $sql);
+  echo "<div style='font-family: Arial, sans-serif; margin: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;'>";
+  while($row = mysqli_fetch_assoc($result)){
+    $item_name = $row['item_name'];
+    $item_code = $row['item_code'];
+    $item_description = $row['item_description'];
+    $mrp = $row['mrp'];
+    $selling_price = $row['selling_price'];
+    $category = $row['category'];
+    $subcategory = $row['subcategory'];
+    $brand = $row['brand'];
+    $rating = $row['rating'];
+    
+    echo "<div style='padding: 10px; border-bottom: 1px solid #eee;'>";
+    echo "<h3 style='color: #333;'>$item_name ($item_code)</h3>";
+    echo "<p style='color: #666;'>$item_description</p>";
+    echo "<p><strong>MRP:</strong> <span style='color: red;'>$mrp</span> | <strong>Selling Price:</strong> <span style='color: green;'>$selling_price</span></p>";
+    echo "<p><strong>Category:</strong> $category > $subcategory</p>";
+    echo "<p><strong>Brand:</strong> $brand | <strong>Rating:</strong> $rating ★</p>";
+    echo "</div>";
+    
+    include 'product-details.php';
+  }
+  echo "</div>";
+  
+  $conn->close();
+?>
+
 
 
 
