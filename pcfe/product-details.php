@@ -3,18 +3,7 @@
     $hooverImagePath="../pcbe/uploads/". $item_code."/hoover_image.jpg";
 ?>
 
-<section class="section ec-product-tab section-space-p float-start" style="min-width: 100px;" id="collection">
-  <div class="container">
-    <div class="row">
-      
 
-    </div> 
-    <div class="row">
-      <div class="col">
-        <div class="tab-content">
-          <!-- 1st Product tab start -->
-          <div class="tab-pane fade show active" id="tab-pro-for-all">
-            <div class="row">
               <!-- Product Content -->
               <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6 ec-product-content" data-animation="fadeIn">
                 <div class="ec-product-inner">
@@ -98,12 +87,5 @@
               
 
               
-            </div>
-          </div>
-          <!-- ec 4th Product tab end -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            
 <!-- ec Product tab Area End -->
