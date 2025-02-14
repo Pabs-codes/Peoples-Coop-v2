@@ -36,7 +36,7 @@
                     />
                   </div>
                   <div class="cat-desc">
-                    <span>Clothes</span><span>440 Products</span>
+                    <span> Clothing</span><span> In Stock</span>
                   </div>
                 </a>
               </li>
@@ -45,16 +45,16 @@
                   <div class="cat-icons">
                     <img
                       class="cat-icon"
-                      src="assets/images/icons/cat_2.png"
+                      src="assets/images/icons/reedits (1).png"
                       alt="cat-icon"
                     /><img
                       class="cat-icon-hover"
-                      src="assets/images/icons/cat_2_1.png"
+                      src="assets/images/icons/reedits (2).png"
                       alt="cat-icon"
                     />
                   </div>
                   <div class="cat-desc">
-                    <span>Watches</span><span>510 Products</span>
+                    <span>Electronics</span><span>510 Products</span>
                   </div>
                 </a>
               </li>
@@ -63,16 +63,16 @@
                   <div class="cat-icons">
                     <img
                       class="cat-icon"
-                      src="assets/images/icons/cat_3.png"
+                      src="assets/images/icons/reedits (4).png"
                       alt="cat-icon"
                     /><img
                       class="cat-icon-hover"
-                      src="assets/images/icons/cat_3_1.png"
+                      src="assets/images/icons/reedits (3).png"
                       alt="cat-icon"
                     />
                   </div>
                   <div class="cat-desc">
-                    <span>Bags</span><span>620 Products</span>
+                    <span>Smarphones</span><span>30+ Products</span>
                   </div>
                 </a>
               </li>
@@ -90,7 +90,7 @@
                     />
                   </div>
                   <div class="cat-desc">
-                    <span>Shoes</span><span>320 Products</span>
+                    <span>Shoes</span><span>30+ Products</span>
                   </div>
                 </a>
               </li>
@@ -103,7 +103,7 @@
               <!-- 1st Category tab end -->
               <div class="tab-pane fade show active" id="tab-cat-1">
                 <div class="row">
-                  <img src="assets/images/cat-banner/1.jpg" alt="" />
+                  <img src="assets/images/cat-banner/4.png" alt="" />
                 </div>
                 <span class="panel-overlay">
                   <a href="shop-left-sidebar-col-3.html" class="btn btn-primary"
@@ -114,7 +114,7 @@
               <!-- 1st Category tab end -->
               <div class="tab-pane fade" id="tab-cat-2">
                 <div class="row">
-                  <img src="assets/images/cat-banner/2.jpg" alt="" />
+                  <img src="assets/images/cat-banner/2.png" alt="" />
                 </div>
                 <span class="panel-overlay">
                   <a href="shop-left-sidebar-col-3.html" class="btn btn-primary"
@@ -126,7 +126,7 @@
               <!-- 3rd Category tab start -->
               <div class="tab-pane fade" id="tab-cat-3">
                 <div class="row">
-                  <img src="assets/images/cat-banner/3.jpg" alt="" />
+                  <img src="assets/images/cat-banner/3.png" alt="" />
                 </div>
                 <span class="panel-overlay">
                   <a href="shop-left-sidebar-col-3.html" class="btn btn-primary"
@@ -138,7 +138,7 @@
               <!-- 4th Category tab start -->
               <div class="tab-pane fade" id="tab-cat-4">
                 <div class="row">
-                  <img src="assets/images/cat-banner/4.jpg" alt="" />
+                  <img src="assets/images/cat-banner/6.png" alt="" />
                 </div>
                 <span class="panel-overlay">
                   <a href="shop-left-sidebar-col-3.html" class="btn btn-primary"

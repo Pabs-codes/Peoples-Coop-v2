@@ -260,6 +260,7 @@
 
                     <div class="countdowntimer">
                       <span id="ec-fs-count-4"></span>
+              
                     </div>
                     <div class="ec-fs-pro-desc">
                       Lorem Ipsum is simply dummy text the printing and

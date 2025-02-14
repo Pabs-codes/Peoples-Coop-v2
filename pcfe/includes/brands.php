@@ -7,8 +7,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="section-title">
-              <h2 class="ec-bg-title">Instagram Feed</h2>
-              <h2 class="ec-title">Instagram Feed</h2>
+              <h2 class="ec-bg-title">Brands</h2>
+              <h2 class="ec-title">Brands </h2>
               <p class="sub-title">Share your store with us</p>
             </div>
           </div>
@@ -87,6 +87,17 @@
                   <a href="#" target="_blank"
                     ><img
                       src="assets/images/instragram-image/7.jpg"
+                      alt="insta"
+                  /></a>
+                </div>
+              </div>
+              <!-- instagram item -->
+                  <!-- instagram item -->
+              <div class="ec-insta-item">
+                <div class="ec-insta-inner">
+                  <a href="#" target="_blank"
+                    ><img
+                      src="assets/images/instragram-image/8.jpg"
                       alt="insta"
                   /></a>
                 </div>

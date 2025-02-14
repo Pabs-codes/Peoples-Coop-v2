@@ -18234,9 +18234,9 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .header-top-social ul li .hdr-twitter:hover {
   background: #1da1f2;
 }
-.header-top-social ul li .hdr-instagram:hover {
+/* .header-top-social ul li .hdr-instagram:hover {
   background: #e44a73;
-}
+} */
 .header-top-social ul li .hdr-linkedin:hover {
   background: #0073b2;
 }
@@ -23500,10 +23500,10 @@ h4.ec-faq-title::after, .ec-faq-title.h4::after {
 .single-pro-content .ec-single-social ul li.twitter a:hover {
   background: #1da1f2;
 }
-.single-pro-content .ec-single-social ul li.instagram a:hover {
+/* .single-pro-content .ec-single-social ul li.instagram a:hover {
   background: #d6249f;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-}
+} */
 .single-pro-content .ec-single-social ul li.behance a:hover {
   background: #0057ff;
 }
