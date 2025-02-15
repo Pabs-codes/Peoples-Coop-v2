@@ -161,17 +161,17 @@ $result = mysqli_query($conn, $sql);
     </div>
   </div>
   <!-- Main Slider End -->
-  <div class="row">
+  <div class="row" style="position: sticky; top: 0; z-index: 1000; background-color: white;">
     <div class="col-md-12 text-center">
-      <ul class="ec-pro-tab-nav nav justify-content-center">
-        
+      <ul class="ec-pro-tab-nav nav justify-content-center" style='margin-top: 10px;'>
+
         <li class="nav-item">
           <a class="nav-link active" data-bs-toggle="tab" href="#tab-pro-for-all"> All</a>
         </li>
         <?php
-        $cat_holder='';
-        
-        foreach($result as $row){
+        $cat_holder = '';
+
+        foreach ($result as $row) {
           $item_name = $row['item_name'];
           $item_code = $row['item_code'];
           $item_description = $row['item_description'];
@@ -181,80 +181,81 @@ $result = mysqli_query($conn, $sql);
           $subcategory = $row['subcategory'];
           $brand = $row['brand'];
           $rating = $row['rating'];
-          if($cat_holder == $row['category']){
-            
-          }else{
+          if ($cat_holder == $row['category']) {
+
+          } else {
             $cat_holder = $row['category'];
-            echo "<li class='nav-item'>
-          <a class='nav-link' data-bs-toggle='tab' href='#".$category."'>".$category."</a>
-        </li>";
+            echo "<li>";
+            echo "<a class='nav-link' data-bs-toggle='tab' href='#" . $category . "'>" . $category . "</a>";
+            // echo "</div>";
           }
           // print_r($cat_array);
-          
+        
         }
         ?>
 
 
 
-        
 
-        
+
+
       </ul>
     </div>
   </div>
   <section class="section ec-product-tab section-space-p float-start" style="min-width: 100%;" id="collection">
-  <div class="container">
-    <div class="row">
-      
+    <div class="container">
+      <div class="row">
 
-    </div> 
-    <div class="row">
-      <div class="col">
-        <div class="tab-content">
-          <!-- 1st Product tab start -->
-          <div class="tab-pane fade show active" id="tab-pro-for-all">
-            <div class="row">
-  <?php
- 
-  
- $category='';
-  foreach($result as $row){
-    $item_name = $row['item_name'];
-    $item_code = $row['item_code'];
-    $item_description = $row['item_description'];
-    $mrp = $row['mrp'];
-    $selling_price = $row['selling_price'];
-    $subcategory = $row['subcategory'];
-    $brand = $row['brand'];
-    $rating = $row['rating'];
-    // check category
-    if($category == $row['category']){
-      include 'product-details.php';
-    }else{
-      $category = $row['category'];
-      
-      echo "<div class='tab-pane fade show active' id='".$category."' name='".$category."'>";
-      echo "<b><u>$category</b></u>";
-      include 'product-details.php';
-      echo "</div>";
-    }
-    // include 'product-details.php';
-  }
-  
-  // print_r($row);
-  $conn->close();
 
-  
-  ?> <!-- ec Product tab Area -->
-</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="tab-content">
+            <!-- 1st Product tab start -->
+            <div class="tab-pane fade show active" id="tab-pro-for-all">
+              <div class="row">
+                <?php
+
+
+                $category = '';
+                foreach ($result as $row) {
+                  $item_name = $row['item_name'];
+                  $item_code = $row['item_code'];
+                  $item_description = $row['item_description'];
+                  $mrp = $row['mrp'];
+                  $selling_price = $row['selling_price'];
+                  $subcategory = $row['subcategory'];
+                  $brand = $row['brand'];
+                  $rating = $row['rating'];
+                  // check category
+                  if ($category == $row['category']) {
+                    include 'product-details.php';
+                  } else {
+                    $category = $row['category'];
+                    $divId = $category;
+
+                    echo "<div id='" . $category . "' name='" . $category . "'>";
+                    echo "<b><u>$category</b></u>";
+                    include 'product-details.php';
+                    echo "</div>";
+                  }
+                  // include 'product-details.php';
+                }
+
+                // print_r($row);
+                $conn->close();
+
+
+                ?> <!-- ec Product tab Area -->
+              </div>
+            </div>
+            <!-- ec 4th Product tab end -->
           </div>
-          <!-- ec 4th Product tab end -->
         </div>
       </div>
     </div>
-  </div>
-</section>
->>>>>>> main
+  </section>
+  >>>>>>> main
   <?php include 'includes/bannersection.php'; ?> <!-- ec Banner Section  -->
 
   <?php include 'includes/categorysection.php'; ?> <!-- ec Category Section  -->
@@ -270,46 +271,6 @@ $result = mysqli_query($conn, $sql);
   <?php include 'includes/whatsappfloat.php'; ?> <!-- whatsapp button  -->
 
   <?php include 'includes/footer.php'; ?> <!-- footer  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <!-- Vendor JS -->
   <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
@@ -340,6 +301,25 @@ $result = mysqli_query($conn, $sql);
   <!-- Main Js -->
   <script src="assets/js/vendor/index.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+  $(document).ready(function () {
+    // Add click event listener to category links
+    $('.ec-pro-tab-nav .nav-link').on('click', function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
+
+      // Get the target category ID from the href attribute
+      var target = $(this).attr('href');
+
+      // Scroll to the target section smoothly
+      $('html, body').animate(
+        {
+          scrollTop: $(target).offset().top - 100, // Adjust offset for header height
+        },
+        800 // Scroll speed in milliseconds
+      );
+    });
+  });
+</script>
 </body>
 
 </html>
