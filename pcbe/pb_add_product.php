@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
 
                 // Move the uploaded file to the folder
                 $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-                $fileDestination = $uploadDir . $fileNameNew;
+                $fileDestination = $uploadDir . "/main_image.jpg";
                 if (move_uploaded_file($fileTmpName, $fileDestination)) {
                     // Insert data into the `item` table
                     $sql = "INSERT INTO `item` (
