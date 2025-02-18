@@ -3,7 +3,7 @@ session_start();
 include 'pb_connection.php';
 
 
-$sql = "SELECT * FROM item where status = 'active' ORDER BY category asc";
+$sql = "SELECT * FROM item i INNER JOIN category c ON i.category=c.cat_id WHERE `status`='Active' ORDER BY category asc, subcategory asc;";
 $result = mysqli_query($conn, $sql);
 
 ?>
@@ -44,7 +44,73 @@ $result = mysqli_query($conn, $sql);
 
   <!-- Background css -->
   <link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css" />
+  <style type="text/css">
+    .ec-main-slider .ec-slide-item {
+      background-image: url('assets/images/main-slider-banner/1.jpg');
+    }
 
+    .ec-main-slider .ec-slide-item.ec-slide-2 {
+      background-image: url('assets/images/main-slider-banner/2.jpg');
+    }
+
+    .ec-main-slider .ec-slide-item.ec-slide-3 {
+      background-image: url('assets/images/main-slider-banner/3.jpg');
+    }
+
+    .ec-main-slider .ec-slide-item.ec-slide-4 {
+      background-image: url('assets/images/main-slider-banner/4.jpg');
+    }
+
+    .ec-main-slider .ec-slide-item.ec-slide-5 {
+      background-image: url('assets/images/main-slider-banner/5.jpg');
+    }
+
+    /* Default styles for larger screens */
+    .ec-pro-tab-nav {
+      display: flex;
+      /* Show the list */
+    }
+
+    .mobile-menu-icon {
+      display: flex;
+      /* Hide the hamburger icon */
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .ec-pro-tab-nav {
+        display: none;
+        /* Hide the list on mobile */
+        flex-direction: column;
+        /* Stack items vertically */
+        position: absolute;
+        top: 60px;
+        /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        /* Background color for the dropdown */
+        z-index: 1000;
+        /* Ensure it appears above other content */
+      }
+
+      .ec-pro-tab-nav.active {
+        display: flex;
+        /* Show the list when active */
+      }
+
+      .mobile-menu-icon {
+        display: block;
+        /* Show the hamburger icon on mobile */
+        cursor: pointer;
+        /* Add pointer cursor */
+        font-size: 24px;
+        /* Adjust icon size */
+        padding: 10px;
+        /* Add padding for better click area */
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -181,12 +247,13 @@ $result = mysqli_query($conn, $sql);
           $subcategory = $row['subcategory'];
           $brand = $row['brand'];
           $rating = $row['rating'];
+          $category_name = $row['category_name'];
           if ($cat_holder == $row['category']) {
 
           } else {
             $cat_holder = $row['category'];
             echo "<li>";
-            echo "<a class='nav-link' data-bs-toggle='tab' href='#" . $category . "'>" . $category . "</a>";
+            echo "<a class='nav-link' data-bs-toggle='tab' href='#" . $category . "'>" . $category_name . "</a>";
             // echo "</div>";
           }
           // print_r($cat_array);
@@ -214,6 +281,9 @@ $result = mysqli_query($conn, $sql);
             <!-- 1st Product tab start -->
             <div class="tab-pane fade show active" id="tab-pro-for-all">
               <div class="row">
+                <div class="mobile-menu-icon" id="mobileMenuIcon">
+                  <i class="fa fa-bars"></i> <!-- FontAwesome icon -->
+                </div>
                 <?php
 
 
@@ -235,7 +305,7 @@ $result = mysqli_query($conn, $sql);
                     $divId = $category;
 
                     echo "<div id='" . $category . "' name='" . $category . "'>";
-                    echo "<b><u>$category</b></u>";
+                    echo "<b><u>$category_name</b></u>";
                     include 'product-details.php';
                     echo "</div>";
                   }
@@ -302,24 +372,33 @@ $result = mysqli_query($conn, $sql);
   <script src="assets/js/vendor/index.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-  $(document).ready(function () {
-    // Add click event listener to category links
-    $('.ec-pro-tab-nav .nav-link').on('click', function (e) {
-      e.preventDefault(); // Prevent default anchor behavior
+    $(document).ready(function () {
+      // Add click event listener to category links
+      $('.ec-pro-tab-nav .nav-link').on('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
 
-      // Get the target category ID from the href attribute
-      var target = $(this).attr('href');
+        // Get the target category ID from the href attribute
+        var target = $(this).attr('href');
 
-      // Scroll to the target section smoothly
-      $('html, body').animate(
-        {
-          scrollTop: $(target).offset().top - 100, // Adjust offset for header height
-        },
-        800 // Scroll speed in milliseconds
-      );
+        // Scroll to the target section smoothly
+        $('html, body').animate(
+          {
+            scrollTop: $(target).offset().top - 100, // Adjust offset for header height
+          },
+          800 // Scroll speed in milliseconds
+        );
+      });
     });
-  });
-</script>
+// Hamburger Menu script
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+      const navList = document.querySelector('.ec-pro-tab-nav');
+
+      mobileMenuIcon.addEventListener('click', function () {
+        navList.classList.toggle('active'); // Toggle the 'active' class
+      });
+    });
+  </script>
 </body>
 
 </html>
