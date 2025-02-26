@@ -2,11 +2,19 @@
 session_start();
 include 'pb_connection.php';
 
-
-$sql = "SELECT * FROM item where status = 'active' ORDER BY category asc";
+$sql = "SELECT * FROM item WHERE status = 'active' ORDER BY category ASC";
 $result = mysqli_query($conn, $sql);
+$item_code = '';
 
+
+$category = ''; // Initialize the variable to prevent undefined variable warnings
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $category = isset($row['category']) ? $row['category'] : 'Uncategorized';
+    // Now you can use $category safely
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,6 +61,106 @@ $result = mysqli_query($conn, $sql);
 
 
   <?php include 'includes/header.php'; ?> <!-- header  -->
+  
+    <!-- peoplescoop Cart Start -->
+    <div class="ec-side-cart-overlay"></div>
+    <div id="ec-side-cart" class="ec-side-cart">
+      <div class="ec-cart-inner">
+        <div class="ec-cart-top">
+          <div class="ec-cart-title">
+            <span class="cart_title">My Cart</span>
+            <button class="ec-close">×</button>
+          </div>
+          <ul class="eccart-pro-items">
+            <li>
+              <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
+                ><img src="assets/images/product-image/6_1.jpg" alt="product"
+              /></a>
+              <div class="ec-pro-content">
+                <a href="product-left-sidebar.html" class="cart_pro_title"
+                  >T-shirt For Women</a
+                >
+                <span class="cart-price"><span>$76.00</span> x 1</span>
+                <div class="qty-plus-minus">
+                  <input
+                    class="qty-input"
+                    type="text"
+                    name="ec_qtybtn"
+                    value="1"
+                  />
+                </div>
+                <a href="javascript:void(0)" class="remove">×</a>
+              </div>
+            </li>
+            <li>
+              <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
+                ><img src="assets/images/product-image/12_1.jpg" alt="product"
+              /></a>
+              <div class="ec-pro-content">
+                <a href="product-left-sidebar.html" class="cart_pro_title"
+                  >Women Leather Shoes</a
+                >
+                <span class="cart-price"><span>$64.00</span> x 1</span>
+                <div class="qty-plus-minus">
+                  <input
+                    class="qty-input"
+                    type="text"
+                    name="ec_qtybtn"
+                    value="1"
+                  />
+                </div>
+                <a href="javascript:void(0)" class="remove">×</a>
+              </div>
+            </li>
+            <li>
+              <a href="product-left-sidebar.html" class="sidpeoplescoop_pro_img"
+                ><img src="assets/images/product-image/3_1.jpg" alt="product"
+              /></a>
+              <div class="ec-pro-content">
+                <a href="product-left-sidebar.html" class="cart_pro_title"
+                  >Girls Nylon Purse</a
+                >
+                <span class="cart-price"><span>$59.00</span> x 1</span>
+                <div class="qty-plus-minus">
+                  <input
+                    class="qty-input"
+                    type="text"
+                    name="ec_qtybtn"
+                    value="1"
+                  />
+                </div>
+                <a href="javascript:void(0)" class="remove">×</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="ec-cart-bottom">
+          <div class="cart-sub-total">
+            <table class="table cart-table">
+              <tbody>
+                <tr>
+                  <td class="text-left">Sub-Total :</td>
+                  <td class="text-right">$300.00</td>
+                </tr>
+                <tr>
+                  <td class="text-left">VAT (20%) :</td>
+                  <td class="text-right">$60.00</td>
+                </tr>
+                <tr>
+                  <td class="text-left">Total :</td>
+                  <td class="text-right primary-color">$360.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cart_btn">
+            <a href="cart.html" class="btn btn-primary">View Cart</a>
+            <a href="checkout.html" class="btn btn-secondary">Checkout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- peoplescoop Cart End -->
   <?php include 'includes/cart.php'; ?> <!--  Cart  -->
   <?php include 'includes/leftham.php'; ?> <!-- Category Sidebar  -->
 
@@ -136,7 +244,7 @@ $result = mysqli_query($conn, $sql);
 
         <div class="ec-slide-item swiper-slide d-flex ec-slide-5">
           <div class="container align-self-center">
-            <div class="row">
+            <div class="row"> 
               <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 align-self-center">
                 <div class="ec-slide-content slider-animation">
                   <h1 class="ec-slide-title">Pure Sound</h1>
@@ -161,109 +269,74 @@ $result = mysqli_query($conn, $sql);
     </div>
   </div>
   <!-- Main Slider End -->
-  <div class="row">
+
+
+  
+<div class="row">
     <div class="col-md-12 text-center">
-      <ul class="ec-pro-tab-nav nav justify-content-center">
-        
-        <li class="nav-item">
-          <a class="nav-link active" data-bs-toggle="tab" href="#tab-pro-for-all"> All</a>
-        </li>
-        <?php
-        $cat_holder='';
-        
-        foreach($result as $row){
-          $item_name = $row['item_name'];
-          $item_code = $row['item_code'];
-          $item_description = $row['item_description'];
-          $mrp = $row['mrp'];
-          $selling_price = $row['selling_price'];
-          $category = $row['category'];
-          $subcategory = $row['subcategory'];
-          $brand = $row['brand'];
-          $rating = $row['rating'];
-          if($cat_holder == $row['category']){
-            
-          }else{
-            $cat_holder = $row['category'];
-            echo "<li class='nav-item'>
-          <a class='nav-link' data-bs-toggle='tab' href='#".$category."'>".$category."</a>
-        </li>";
-          }
-          // print_r($cat_array);
-          
-        }
-        ?>
-
-
-
-        
-
-        
-      </ul>
+        <ul class="ec-pro-tab-nav nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#tab-pro-for-all">All</a>
+            </li>
+            <?php
+            $cat_holder = '';
+            foreach ($result as $row) {
+                if ($cat_holder !== $row['category']) {
+                    $cat_holder = $row['category'];
+                    echo "<li class='nav-item'>
+                            <a class='nav-link' data-bs-toggle='tab' href='#" . $category . "'>$category</a>
+                          </li>";
+                }
+            }
+            ?>
+        </ul>
     </div>
-  </div>
-  <section class="section ec-product-tab section-space-p float-start" style="min-width: 100%;" id="collection">
-  <div class="container">
-    <div class="row">
-      
-
-    </div> 
-    <div class="row">
-      <div class="col">
-        <div class="tab-content">
-          <!-- 1st Product tab start -->
-          <div class="tab-pane fade show active" id="tab-pro-for-all">
-            <div class="row">
-  <?php
- 
-  
- $category='';
-  foreach($result as $row){
-    $item_name = $row['item_name'];
-    $item_code = $row['item_code'];
-    $item_description = $row['item_description'];
-    $mrp = $row['mrp'];
-    $selling_price = $row['selling_price'];
-    $subcategory = $row['subcategory'];
-    $brand = $row['brand'];
-    $rating = $row['rating'];
-    // check category
-    if($category == $row['category']){
-      include 'product-details.php';
-    }else{
-      $category = $row['category'];
-      
-      echo "<div class='tab-pane fade show active' id='".$category."' name='".$category."'>";
-      echo "<b><u>$category</b></u>";
-      include 'product-details.php';
-      echo "</div>";
-    }
-    // include 'product-details.php';
-  }
-  
-  // print_r($row);
-  $conn->close();
-
-  
-  ?> <!-- ec Product tab Area -->
 </div>
-          </div>
-          <!-- ec 4th Product tab end -->
+
+<section class="section ec-product-tab section-space-p float-start w-100" id="collection">
+    <div class="container">
+        <div class="tab-content">
+            <!-- "All" Products Tab -->
+            <div class="tab-pane fade show active" id="tab-pro-for-all">
+                <div class="row">
+                    <?php foreach ($result as $row) { ?>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <?php include 'product-details.php'; ?>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+
+            <?php
+            $categories = [];
+            foreach ($result as $row) {
+                $categories[$row['category']][] = $row;
+            }
+
+            foreach ($categories as $category => $products) {
+                echo "<div class='tab-pane fade' id='$category'>
+                        <div class='row'>";
+                foreach ($products as $product) {
+                    echo "<div class='col-md-3 col-sm-6 mb-4'>";
+                    include 'product-details.php';
+                    echo "</div>";
+                }
+                echo "</div></div>";
+            }
+            ?>
         </div>
-      </div>
     </div>
-  </div>
 </section>
->>>>>>> main
+
   <?php include 'includes/bannersection.php'; ?> <!-- ec Banner Section  -->
 
   <?php include 'includes/categorysection.php'; ?> <!-- ec Category Section  -->
 
+  <?php include 'includes/producttabarea copy.php'; ?> <!-- ec Category Section  -->
+
   <?php include 'includes/featurexlimited.php'; ?> <!-- Feature & Special Section  -->
 
   <?php include 'includes/brands.php'; ?> <!-- instagram Section  -->
-
-
 
   <?php include 'includes/settingsbtn.php'; ?> <!-- settings button  -->
 
