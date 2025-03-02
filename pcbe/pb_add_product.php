@@ -89,9 +89,10 @@ if (isset($_POST['submit'])) {
                         `pages`, 
                         `binding`, 
                         `language`, 
-                        `genre`
+                        `genre`,
+                        `stock`
                     ) VALUES (
-                        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+                        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?
                     )";
 
                     // Prepare the SQL statement
@@ -102,7 +103,7 @@ if (isset($_POST['submit'])) {
 
                         // Bind parameters to the statement
                         $stmt->bind_param(
-                            "ssssssddsssssssissssssssssss",
+                            "ssssssddsssssssissssssssssssi",
                             $item_code,
                             $product_name,
                             $offer,
@@ -130,7 +131,8 @@ if (isset($_POST['submit'])) {
                             $pages,
                             $binding,
                             $language,
-                            $genre
+                            $genre,
+                            $qty
                         );
 
                         // Execute the statement

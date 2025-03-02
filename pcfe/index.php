@@ -2,7 +2,8 @@
 session_start();
 include 'pb_connection.php';
 
-$sql = "SELECT * FROM item WHERE status = 'active' ORDER BY category ASC";
+
+$sql = "SELECT * FROM item where status = 'active' ORDER BY category asc";
 $result = mysqli_query($conn, $sql);
 $item_code = '';
 
@@ -52,7 +53,73 @@ while ($row = mysqli_fetch_assoc($result)) {
 
   <!-- Background css -->
   <link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css" />
+  <style type="text/css">
+    .ec-main-slider .ec-slide-item {
+      background-image: url('assets/images/main-slider-banner/1.jpg');
+    }
 
+    .ec-main-slider .ec-slide-item.ec-slide-2 {
+      background-image: url('assets/images/main-slider-banner/2.jpg');
+    }
+
+    .ec-main-slider .ec-slide-item.ec-slide-3 {
+      background-image: url('assets/images/main-slider-banner/3.jpg');
+    }
+
+    .ec-main-slider .ec-slide-item.ec-slide-4 {
+      background-image: url('assets/images/main-slider-banner/4.jpg');
+    }
+
+    .ec-main-slider .ec-slide-item.ec-slide-5 {
+      background-image: url('assets/images/main-slider-banner/5.jpg');
+    }
+
+    /* Default styles for larger screens */
+    .ec-pro-tab-nav {
+      display: flex;
+      /* Show the list */
+    }
+
+    .mobile-menu-icon {
+      display: flex;
+      /* Hide the hamburger icon */
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .ec-pro-tab-nav {
+        display: none;
+        /* Hide the list on mobile */
+        flex-direction: column;
+        /* Stack items vertically */
+        position: absolute;
+        top: 60px;
+        /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        /* Background color for the dropdown */
+        z-index: 1000;
+        /* Ensure it appears above other content */
+      }
+
+      .ec-pro-tab-nav.active {
+        display: flex;
+        /* Show the list when active */
+      }
+
+      .mobile-menu-icon {
+        display: block;
+        /* Show the hamburger icon on mobile */
+        cursor: pointer;
+        /* Add pointer cursor */
+        font-size: 24px;
+        /* Adjust icon size */
+        padding: 10px;
+        /* Add padding for better click area */
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -269,65 +336,100 @@ while ($row = mysqli_fetch_assoc($result)) {
     </div>
   </div>
   <!-- Main Slider End -->
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <ul class="ec-pro-tab-nav nav justify-content-center">
+        
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#tab-pro-for-all"> All</a>
+        </li>
+        <?php
+        $cat_holder='';
+        
+        foreach($result as $row){
+          $item_name = $row['item_name'];
+          $item_code = $row['item_code'];
+          $item_description = $row['item_description'];
+          $mrp = $row['mrp'];
+          $selling_price = $row['selling_price'];
+          $category = $row['category'];
+          $subcategory = $row['subcategory'];
+          $brand = $row['brand'];
+          $rating = $row['rating'];
+          if($cat_holder == $row['category']){
+            
+          }else{
+            $cat_holder = $row['category'];
+            echo "<li class='nav-item'>
+          <a class='nav-link' data-bs-toggle='tab' href='#".$category."'>".$category."</a>
+        </li>";
+          }
+          // print_r($cat_array);
+          
+        }
+        ?>
 
+
+
+        
+
+        
+      </ul>
+    </div>
+  </div>
+  <section class="section ec-product-tab section-space-p float-start" style="min-width: 100%;" id="collection">
+  <div class="container">
+    <div class="row">
+      
+
+    </div> 
+    <div class="row">
+      <div class="col">
+        <div class="tab-content">
+          <!-- 1st Product tab start -->
+          <div class="tab-pane fade show active" id="tab-pro-for-all">
+            <div class="row">
+  <?php
+ 
+  
+ $category='';
+  foreach($result as $row){
+    $item_name = $row['item_name'];
+    $item_code = $row['item_code'];
+    $item_description = $row['item_description'];
+    $mrp = $row['mrp'];
+    $selling_price = $row['selling_price'];
+    $subcategory = $row['subcategory'];
+    $brand = $row['brand'];
+    $rating = $row['rating'];
+    // check category
+    if($category == $row['category']){
+      include 'product-details.php';
+    }else{
+      $category = $row['category'];
+      
+      echo "<div class='tab-pane fade show active' id='".$category."' name='".$category."'>";
+      echo "<b><u>$category</b></u>";
+      include 'product-details.php';
+      echo "</div>";
+    }
+    // include 'product-details.php';
+  }
+  
+  // print_r($row);
+  $conn->close();
 
   
-<div class="row">
-    <div class="col-md-12 text-center">
-        <ul class="ec-pro-tab-nav nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link active" data-bs-toggle="tab" href="#tab-pro-for-all">All</a>
-            </li>
-            <?php
-            $cat_holder = '';
-            foreach ($result as $row) {
-                if ($cat_holder !== $row['category']) {
-                    $cat_holder = $row['category'];
-                    echo "<li class='nav-item'>
-                            <a class='nav-link' data-bs-toggle='tab' href='#" . $category . "'>$category</a>
-                          </li>";
-                }
-            }
-            ?>
-        </ul>
-    </div>
+  ?> <!-- ec Product tab Area -->
 </div>
-
-<section class="section ec-product-tab section-space-p float-start w-100" id="collection">
-    <div class="container">
-        <div class="tab-content">
-            <!-- "All" Products Tab -->
-            <div class="tab-pane fade show active" id="tab-pro-for-all">
-                <div class="row">
-                    <?php foreach ($result as $row) { ?>
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <?php include 'product-details.php'; ?>
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
-
-            <?php
-            $categories = [];
-            foreach ($result as $row) {
-                $categories[$row['category']][] = $row;
-            }
-
-            foreach ($categories as $category => $products) {
-                echo "<div class='tab-pane fade' id='$category'>
-                        <div class='row'>";
-                foreach ($products as $product) {
-                    echo "<div class='col-md-3 col-sm-6 mb-4'>";
-                    include 'product-details.php';
-                    echo "</div>";
-                }
-                echo "</div></div>";
-            }
-            ?>
+          </div>
+          <!-- ec 4th Product tab end -->
         </div>
+      </div>
     </div>
+  </div>
 </section>
-
+>>>>>>> main
   <?php include 'includes/bannersection.php'; ?> <!-- ec Banner Section  -->
 
   <?php include 'includes/categorysection.php'; ?> <!-- ec Category Section  -->
@@ -343,46 +445,6 @@ while ($row = mysqli_fetch_assoc($result)) {
   <?php include 'includes/whatsappfloat.php'; ?> <!-- whatsapp button  -->
 
   <?php include 'includes/footer.php'; ?> <!-- footer  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <!-- Vendor JS -->
   <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
@@ -413,6 +475,34 @@ while ($row = mysqli_fetch_assoc($result)) {
   <!-- Main Js -->
   <script src="assets/js/vendor/index.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Add click event listener to category links
+      $('.ec-pro-tab-nav .nav-link').on('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
+
+        // Get the target category ID from the href attribute
+        var target = $(this).attr('href');
+
+        // Scroll to the target section smoothly
+        $('html, body').animate(
+          {
+            scrollTop: $(target).offset().top - 100, // Adjust offset for header height
+          },
+          800 // Scroll speed in milliseconds
+        );
+      });
+    });
+// Hamburger Menu script
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+      const navList = document.querySelector('.ec-pro-tab-nav');
+
+      mobileMenuIcon.addEventListener('click', function () {
+        navList.classList.toggle('active'); // Toggle the 'active' class
+      });
+    });
+  </script>
 </body>
 
 </html>

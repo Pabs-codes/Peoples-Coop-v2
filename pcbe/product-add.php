@@ -1103,7 +1103,7 @@ if (!isset($_SESSION['admin'])) {
 													<div class="col-md-6">
 														<label for="rating" class="form-label">Rating</label>
 														<input type="number" class="form-control" id="rating"
-															name="rating" min="1" max="5" required>
+															name="rating" min="1" max="5">
 													</div>
 
 													<!-- Description -->
@@ -1135,7 +1135,7 @@ if (!isset($_SESSION['admin'])) {
 														<div class="col-md-6">
 															<label for="size" class="form-label">Size</label>
 															<input type="text" class="form-control" id="size"
-																name="size" required>
+																name="size">
 														</div>
 
 														<!-- Quantity -->
@@ -1149,21 +1149,35 @@ if (!isset($_SESSION['admin'])) {
 														<div class="col-md-6">
 															<label for="color" class="form-label">Color</label>
 															<input type="text" class="form-control" id="color"
-																name="color" required>
+																name="color">
 														</div>
 
 														<!-- Brand -->
 														<div class="col-md-6">
 															<label for="brand" class="form-label">Brand</label>
 															<input type="text" class="form-control" id="brand"
-																name="brand" required>
+																name="brand">
 														</div>
 
 														<!-- Category -->
 														<div class="col-md-6">
 															<label for="category" class="form-label">Category</label>
-															<input type="text" class="form-control" id="category"
-																name="category" required>
+															<select class="form-control" id="category" name="category"
+																required>
+																<?php
+																include("./pb_connection.php");
+																$sql = "SELECT * FROM category where category_status = 'ACTIVE'";
+																$result = mysqli_query($conn, $sql);
+																if (mysqli_num_rows($result) > 0) {
+																	while ($row = mysqli_fetch_assoc($result)) {
+																		echo "<option value='" . $row['cat_id'] . "'>" . $row['category_name'] . "</option>";
+																	}
+																}
+
+																?>
+
+															</select>
+
 														</div>
 
 														<!-- Subcategory -->
@@ -1178,132 +1192,133 @@ if (!isset($_SESSION['admin'])) {
 														<div class="col-md-6">
 															<label for="make" class="form-label">Make</label>
 															<input type="text" class="form-control" id="make"
-																name="make" required>
+																name="make">
 														</div>
 
 														<!-- Model -->
 														<div class="col-md-6">
 															<label for="model" class="form-label">Model</label>
 															<input type="text" class="form-control" id="model"
-																name="model" required>
+																name="model">
 														</div>
 													</div>
 
 													<!-- Div for Books Category -->
-													<div id="books_category" class="col-md-12" >
-														
+													<div id="books_category" class="col-md-12">
+
 														<!-- Author -->
 														<div class="col-md-6">
 															<label for="author" class="form-label">Author</label>
 															<input type="text" class="form-control" id="author"
-																name="author" required>
+																name="author">
 														</div>
 
 														<!-- Publisher -->
 														<div class="col-md-6">
 															<label for="publisher" class="form-label">Publisher</label>
 															<input type="text" class="form-control" id="publisher"
-																name="publisher" required>
+																name="publisher">
 														</div>
 
 														<!-- ISBN -->
 														<div class="col-md-6">
 															<label for="isbn" class="form-label">ISBN</label>
 															<input type="text" class="form-control" id="isbn"
-																name="isbn" required>
+																name="isbn">
 														</div>
 
 														<!-- Edition -->
 														<div class="col-md-6">
 															<label for="edition" class="form-label">Edition</label>
 															<input type="text" class="form-control" id="edition"
-																name="edition" required>
+																name="edition">
 														</div>
 
 														<!-- Pages -->
 														<div class="col-md-6">
 															<label for="pages" class="form-label">Pages</label>
 															<input type="number" class="form-control" id="pages"
-																name="pages" required>
+																name="pages">
 														</div>
 
 														<!-- Binding -->
 														<div class="col-md-6">
 															<label for="binding" class="form-label">Binding</label>
 															<input type="text" class="form-control" id="binding"
-																name="binding" required>
+																name="binding">
 														</div>
 
 														<!-- Language -->
 														<div class="col-md-6">
 															<label for="language" class="form-label">Language</label>
 															<input type="text" class="form-control" id="language"
-																name="language" required>
+																name="language">
 														</div>
 
 														<!-- Genre -->
 														<div class="col-md-6">
 															<label for="genre" class="form-label">Genre</label>
 															<input type="text" class="form-control" id="genre"
-																name="genre" required>
+																name="genre">
 														</div>
 
 														<!-- Weight -->
 														<div class="col-md-6">
 															<label for="weight" class="form-label">
-													</div>
+														</div>
 
-													<!-- Keywords -->
-													<div class="col-md-12">
-														<label for="keywords" class="form-label">Keywords</label>
-														<input type="text" class="form-control" id="keywords"
-															name="keywords" required>
-													</div>
+														<!-- Keywords -->
+														<div class="col-md-12">
+															<label for="keywords" class="form-label">Keywords</label>
+															<input type="text" class="form-control" id="keywords"
+																name="keywords" required>
+														</div>
 
 
-													<!-- Meta Description -->
-													<div class="col-md-12">
-														<label for="meta_description" class="form-label">Meta
-															Description</label>
-														<textarea class="form-control" id="meta_description"
-															name="meta_description" rows="2" required></textarea>
-													</div>
+														<!-- Meta Description -->
+														<div class="col-md-12">
+															<label for="meta_description" class="form-label">Meta
+																Description</label>
+															<textarea class="form-control" id="meta_description"
+																name="meta_description" rows="2"></textarea>
+														</div>
 
-													<!-- Meta Title -->
-													<div class="col-md-12">
-														<label for="meta_title" class="form-label">Meta Title</label>
-														<input type="text" class="form-control" id="meta_title"
-															name="meta_title" required>
-													</div>
+														<!-- Meta Title -->
+														<div class="col-md-12">
+															<label for="meta_title" class="form-label">Meta
+																Title</label>
+															<input type="text" class="form-control" id="meta_title"
+																name="meta_title">
+														</div>
 
-													<!-- Meta Keywords -->
-													<div class="col-md-12">
-														<label for="meta_keywords" class="form-label">Meta
-															Keywords</label>
-														<input type="text" class="form-control" id="meta_keywords"
-															name="meta_keywords" required>
-													</div>
+														<!-- Meta Keywords -->
+														<div class="col-md-12">
+															<label for="meta_keywords" class="form-label">Meta
+																Keywords</label>
+															<input type="text" class="form-control" id="meta_keywords"
+																name="meta_keywords">
+														</div>
 
-													<!-- Offer -->
-													<div class="col-md-12">
-														<label for="offer" class="form-label">Offer</label>
-														<input type="text" class="form-control" id="offer" name="offer"
-															required>
-													</div>
+														<!-- Offer -->
+														<div class="col-md-12">
+															<label for="offer" class="form-label">Offer</label>
+															<input type="text" class="form-control" id="offer"
+																name="offer">
+														</div>
 
-													<!-- File Upload -->
-													<div class="col-md-12">
-														<label for="file" class="form-label">Upload Product
-															Image</label>
-														<input type="file" class="form-control" id="file" name="file"
-															accept=".jpg, .jpeg, .png" required>
-													</div>
+														<!-- File Upload -->
+														<div class="col-md-12">
+															<label for="file" class="form-label">Upload Product
+																Image</label>
+															<input type="file" class="form-control" id="file"
+																name="file" accept=".jpg, .jpeg, .png" required>
+														</div>
 
-													<!-- Submit Button -->
-													<div class="col-md-12">
-														<button type="submit" name="submit"
-															class="btn btn-primary">Submit</button>
-													</div>
+														<!-- Submit Button -->
+														<div class="col-md-12">
+															<button type="submit" name="submit"
+																class="btn btn-primary">Submit</button>
+														</div>
 
 												</form>
 
